@@ -11,44 +11,99 @@ import Alamofire
 
 class ViewController: NSViewController {
     
-    let play = Play(url: "https://polly.us-west-2.amazonaws.com/v1/speech?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAYK7H22UMYFGI5UZN%2F20190525%2Fus-west-2%2Fpolly%2Faws4_request&X-Amz-Date=20190525T185736Z&X-Amz-Expires=215999&X-Amz-SignedHeaders=host&Text=%D0%AD%D1%82%D0%BE%20%D0%BD%D0%B5%20%D1%81%D0%BC%D0%B5%D1%88%D0%BD%D0%BE&VoiceId=Maxim&OutputFormat=mp3&X-Amz-Security-Token=AgoGb3JpZ2luED8aCXVzLXdlc3QtMiKAApZHJt%2BI%2B6Iycv%2FPseXaCfD9OuvohORNQ2MUfnXzOejVi4p%2Bn%2BaWBHjfDQVmzF7CZZD6aapYdENCeqLcPiwaRfWFtsDxrKX3dAGCl%2BTpOxj67C%2B2rmyt1%2FgotZ2B8mt6K5fsMnPT0HGeQtuCyPhSiKYArpfA01Vh3JNXga5ZBDijz%2F1koj3aRzEk3rWOX7wAGGxEn%2B9Fml3BdsHumy4s4dJw%2Fj7GzRbpnLaJS3IbGJq%2FZrgGpEWGWOackWVNodrY1ffu3JU1RvODIAw17iYTqMTT9PTR4f%2Fuk8awmkA6%2FwHBphVOaHPZV6LcG6arf2R1wkNKn9WmKq2jkw%2B%2FSEdSAZcqtQYI9P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw1NzMzMjc0NjM3MDUiDDorxeLPDqNpM%2Bw%2FZiqJBof1KLJ89CyokRHQUajoFmKwlzV6f8U3TQJbhRwJlDDgzvgqbPHPGFqpHnH%2FxgSi3xUPPvDAmtLzrWk6Rk2nQhzFklxnY4%2FuKYCJDfdE4CB23UCaNyoKTHM1anLFG7ykurBzO0bCaZNIj8mGmAuay%2BzOIX%2Bu1vqD%2FscMMWurEgBEpDq8yYF%2F%2Fc5g2l%2Bi%2F8Yo4W2ATy4%2B0hrBPvFGqPFfDk5GmO87rqzPPkerXPPrbtnDQbOXTLXXmVdZcSyENFhC5IyvsttH6qo1WEct8EDwDEcTjiSFkt5jFBxoah1gluHzObbiR989VyleY%2BVBMJowHoRYienBYsC9oCZ30vyM8fAKXBlUdFWcf5Tyd0TGTFCqn3NCohBorV%2BQwrkuQ37tNTt8IjruaQWIPl5N5XocAkJFM6f%2FCBHn8lf6jiEl0qABRScH8Art%2FmfOnDVZLDKIpmoNDSVE9LY9mjzdjxS5TDuyjSCxJSH5lDTwPBo%2Fo%2B8rynp8UhdmoDrpQ9KvfNBjTTdzOt0dgu%2FOB0Dslr90VYeDYK1q0avFOjk8PkGpuc3dj7WTcZ1HOG7nvgcGESUffDC8M%2Fe7FY7xRq0KLKwPT5q5rn5H2%2Be9DG2u37OMrd0iy0obtbnw1Uv6BmNKpbvv6Vg%2FPtIRLgHgOWcijWKHDQkORJMqyidp5NsCbULwyvqIugteXnSAkxzA6g0Hr9hZQrBm6bZx7iElO%2FSoF9Oy%2FSO3R34NYaMISKHVu%2Bsu8QvsIJOY8UWQYfGu2PyYtEdwAReptr9Du0cHDnxlciXiUUs1vnntrw%2FRS0HvzvDp6%2FRZkx%2FrlEA8JO8oWWCSFAJUw3BEXnFA%2BvSyU59%2BZiKUP8%2FX0syMrd6hvP%2F0hRIgx3WtUAlYeTiPr%2FNIWCuAJrakPpZJywoj2%2FidC3AyjqKe4QQ6q1Yb%2FH%2B8%2BASpZ6eTmO77VEuDMScoWN4OVpVZ%2BkX9ScWs%2F6In5INs12RXEXhIqsEP%2FepeAMANUcFXadVjVLiDU9lgX7vsCz0DoUPaAzm%2Br4KXLcNqz7sPIjCaoKbnBQ%3D%3D&X-Amz-Signature=05216fc6b90c1bd501f63dbaed9d257065f9f0144d9c9cd83e7da96961ad2569"
-    )
+    @IBOutlet private var textView: NSTextView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func spell(_ sender: Any) {
+        let task = Polly.Synthesize.spell(text: textView.string)
         
+        guard let url = URL(string: "https://polly.us-east-2.amazonaws.com\(task.path)") else { return }
         
-        play.start()
+        Alamofire.SessionManager.default.adapter = Signer()
+        
+        Alamofire
+            .request(
+                url,
+                method: .post,
+                parameters: task.parameters,
+                encoding: JSONEncoding.default)
+            .responseData {
+                
+                let directory = try! FileManager.default.directory(.applicationSupportDirectory, in: .allDomainsMask, withPath: "Roborock")
+                let file = directory.appendingPathComponent("Audio.mp3")
+                
+                guard FileManager.default.createFile(
+                    atPath: file.path,
+                    contents: $0.data,
+                    attributes: nil
+                    ) else { fatalError("Could not create a file") }
+                
+                let roborock = Roborock(user: "root", ip: "192.168.0.114")
+                roborock.play(url: file, volume: 0.3)
+        }
     }
     
 }
 
-
-
-final class Play {
+final class Roborock {
     
-    private lazy var process: Process = {
-        let process = Process()
-        process.launchPath = "/usr/bin/env"
-        process.arguments = ["ssh",
-                             "root@192.168.0.114",
-                             "-t",
-                             "play",
-                             "--magic",
-        ]
-        return process
-    }()
+    private let user: String
+    private let ip: String
     
-    private let url: String
-    private let volume: Float
-    
-    init(url: String, volume: Float = 0.7) {
-        self.url = url
-        self.volume = volume
+    init(user: String, ip: String) {
+        self.user = user
+        self.ip = ip
     }
     
-    func start() {
-        process.arguments! += ["-v", "\(volume)", "\"\(url)\""]
-        process.launch()
+    func play(url: URL, volume: Float = 0.7) {
+        
+        let copy: Process = {
+            let process = Process()
+            process.launchPath = "/usr/bin/env"
+            process.environment = ProcessInfo.processInfo.environment
+            process.arguments = [
+                "scp", url.path, "\(user)@\(ip):/"
+            ]
+            return process
+        }()
+        
+        let play: Process = {
+            let process = Process()
+            process.launchPath = "/usr/bin/env"
+            process.environment = ProcessInfo.processInfo.environment
+            process.arguments = [
+                "ssh", "\(user)@\(ip)",
+                "-t",
+                "play",
+                "-v",
+                "\(volume)",
+                "--magic",
+                "/\(url.lastPathComponent)"
+            ]
+            
+            return process
+        }()
+        
+        let delete: Process = {
+            let process = Process()
+            process.launchPath = "/usr/bin/env"
+            process.environment = ProcessInfo.processInfo.environment
+            process.arguments = [
+                "ssh", "\(user)@\(ip)",
+                "-t",
+                "rm -rf",
+                "/\(url.lastPathComponent)"
+            ]
+            
+            return process
+        }()
+        
+        copy.launch()
+        copy.waitUntilExit()
+        
+        play.launch()
+        play.waitUntilExit()
+        
+        delete.launch()
+        delete.waitUntilExit()
     }
 }

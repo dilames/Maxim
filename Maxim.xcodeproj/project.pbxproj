@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62051F0122974DDF00356F10 /* Some.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62051F0022974DDF00356F10 /* Some.swift */; };
+		62051F0122974DDF00356F10 /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62051F0022974DDF00356F10 /* Adapter.swift */; };
 		6215987A2280F2200027AAC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621598792280F2200027AAC6 /* AppDelegate.swift */; };
 		6215987C2280F2200027AAC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6215987B2280F2200027AAC6 /* ViewController.swift */; };
 		6215987E2280F2210027AAC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6215987D2280F2210027AAC6 /* Assets.xcassets */; };
 		621598812280F2210027AAC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6215987F2280F2210027AAC6 /* Main.storyboard */; };
+		625368222299F8260033B5FE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625368212299F8260033B5FE /* FileManager.swift */; };
 		62E2452D2280FDDC001BD7F7 /* Polly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2452C2280FDDC001BD7F7 /* Polly.swift */; };
 		DCB7D2F32198F756CDED1F0B /* Pods_Maxim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBE8C37E31D5E428EC8AA9B /* Pods_Maxim.framework */; };
 /* End PBXBuildFile section */
@@ -20,7 +21,7 @@
 		1B4A34A39F7EDD430F19F6F5 /* Pods-Maxim.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maxim.debug.xcconfig"; path = "Target Support Files/Pods-Maxim/Pods-Maxim.debug.xcconfig"; sourceTree = "<group>"; };
 		1DBE8C37E31D5E428EC8AA9B /* Pods_Maxim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maxim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5438D780DEE7EA650EF500 /* Pods-Maxim.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maxim.release.xcconfig"; path = "Target Support Files/Pods-Maxim/Pods-Maxim.release.xcconfig"; sourceTree = "<group>"; };
-		62051F0022974DDF00356F10 /* Some.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Some.swift; sourceTree = "<group>"; };
+		62051F0022974DDF00356F10 /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 		621598762280F2200027AAC6 /* Maxim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maxim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		621598792280F2200027AAC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6215987B2280F2200027AAC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +29,7 @@
 		621598802280F2210027AAC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		621598822280F2210027AAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		621598832280F2210027AAC6 /* Maxim.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Maxim.entitlements; sourceTree = "<group>"; };
+		625368212299F8260033B5FE /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		62E2452C2280FDDC001BD7F7 /* Polly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +73,8 @@
 				621598822280F2210027AAC6 /* Info.plist */,
 				621598832280F2210027AAC6 /* Maxim.entitlements */,
 				62E2452C2280FDDC001BD7F7 /* Polly.swift */,
-				62051F0022974DDF00356F10 /* Some.swift */,
+				62051F0022974DDF00356F10 /* Adapter.swift */,
+				625368212299F8260033B5FE /* FileManager.swift */,
 			);
 			path = Maxim;
 			sourceTree = "<group>";
@@ -214,7 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62051F0122974DDF00356F10 /* Some.swift in Sources */,
+				625368222299F8260033B5FE /* FileManager.swift in Sources */,
+				62051F0122974DDF00356F10 /* Adapter.swift in Sources */,
 				62E2452D2280FDDC001BD7F7 /* Polly.swift in Sources */,
 				6215987C2280F2200027AAC6 /* ViewController.swift in Sources */,
 				6215987A2280F2200027AAC6 /* AppDelegate.swift in Sources */,

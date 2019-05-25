@@ -9,35 +9,35 @@
 import Foundation
 
 enum Language: String {
-    case arb
-    case cmn_CN
-    case cy_GB
-    case da_DK
-    case de_DE
-    case en_AU
-    case en_GB
-    case en_GB_WLS
-    case en_IN
-    case en_US
-    case es_ES
-    case es_MX
-    case es_US
-    case fr_CA
-    case fr_FR
-    case is_IS
-    case it_IT
-    case ja_JP
-    case hi_IN
-    case ko_KR
-    case nb_NO
-    case nl_NL
-    case pl_PL
-    case pt_BR
-    case pt_PT
-    case ro_RO
-    case ru_RU
-    case sv_SE
-    case tr_TR
+    case arb = "arb"
+    case cmn_CN = "cmn-CN"
+    case cy_GB = "cy-GB"
+    case da_DK = "da-DK"
+    case de_DE = "de-DE"
+    case en_AU = "en-AU"
+    case en_GB = "en-GB"
+    case en_GB_WLS = "en-GB-WLS"
+    case en_IN = "en-IN"
+    case en_US = "en-US"
+    case es_ES = "es-ES"
+    case es_MX = "es-MX"
+    case es_US = "es-US"
+    case fr_CA = "fr-CA"
+    case fr_FR = "fr-FR"
+    case is_IS = "is-IS"
+    case it_IT = "it-IT"
+    case ja_JP = "ja-JP"
+    case hi_IN = "hi-IN"
+    case ko_KR = "ko-KR"
+    case nb_NO = "nb-NO"
+    case nl_NL = "nl-NL"
+    case pl_PL = "pl-PL"
+    case pt_BR = "pt-BR"
+    case pt_PT = "pt-PT"
+    case ro_RO = "ro-RO"
+    case ru_RU = "ru-RU"
+    case sv_SE = "sv-SE"
+    case tr_TR = "tr-TR"
 }
 
 enum Voice: String {
@@ -114,39 +114,52 @@ enum Output: String {
 
 enum Polly {
     
-    case Spell
-    
-    var parameters: [String: String] {
-        return [
-            "LanguageCode": "\(Language.ru_RU)",
-            "OutputFormat": "\(Output.mp3)",
-            "Text": "Привет кожанные ублюдки, это Максимка.",
-            "VoiceId": "\(Voice.Maxim)"
-        ]
+    enum Synthesize {
+        case spell(text: String)
     }
     
-    var AWSPath: String {
+    enum Task {
+        case create(text: String)
+    }
+    
+}
+
+extension Polly.Synthesize {
+    
+    var parameters: [String: String] {
+        switch self {
+        case .spell(let text): return [
+            "OutputFormat": "\(Output.mp3)",
+            "Text": "\(text)",
+            "VoiceId": "\(Voice.Maxim)",
+            "SampleRate": "16000"
+            ]
+        }
+    }
+    
+    var path: String {
         return "/v1/speech"
     }
     
-    var AWSRegion: String {
-        return "us-east-2"
+}
+
+extension Polly.Task {
+    
+    var parameters: [String: String] {
+        switch self {
+        case .create(let text): return [
+            "LanguageCode": "\(Language.ru_RU.rawValue)",
+            "OutputFormat": "\(Output.mp3)",
+            "Text": "\(text)",
+            "OutputS3BucketName": "roborock",
+            "VoiceId": "\(Voice.Maxim)",
+            "SampleRate": "16000"
+            ]
+        }
     }
     
-    var AWSEndPoint: String {
-        return "https://polly.us-east-2.amazonaws.com"
-    }
-    
-    var AWSService: String {
-        return "polly"
-    }
-    
-    var AWSAccessKeyId: String {
-        return "AKIAJK6LKHPN4AJBARAA"
-    }
-    
-    var AWSSecretKey: String {
-        return "XYHCB02GSklwFQbLq61Q2FUnipFn"
+    var path: String {
+        return "/v1/synthesisTasks"
     }
     
 }
