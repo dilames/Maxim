@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AWSSecretKey</key>
+	<string>tp8B8mQCFE+7O9mk3b2qHyF+7o2PsnwDfLe7jths</string>
+	<key>AWSAccessKeyId</key>
+	<string>AKIAJOOWOH5RJ3AAILKA</string>
+	<key>AWSService</key>
+	<string>polly</string>
+	<key>AWSRegion</key>
+	<string>us-east-2</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

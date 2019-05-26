@@ -12,7 +12,19 @@
 		6215987C2280F2200027AAC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6215987B2280F2200027AAC6 /* ViewController.swift */; };
 		6215987E2280F2210027AAC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6215987D2280F2210027AAC6 /* Assets.xcassets */; };
 		621598812280F2210027AAC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6215987F2280F2210027AAC6 /* Main.storyboard */; };
-		625368222299F8260033B5FE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625368212299F8260033B5FE /* FileManager.swift */; };
+		625368222299F8260033B5FE /* FileManager+Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625368212299F8260033B5FE /* FileManager+Directory.swift */; };
+		625368272299FE730033B5FE /* Polly+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625368262299FE730033B5FE /* Polly+Language.swift */; };
+		625368292299FE8A0033B5FE /* Polly+Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625368282299FE8A0033B5FE /* Polly+Voice.swift */; };
+		6253682B2299FE970033B5FE /* Polly+Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6253682A2299FE970033B5FE /* Polly+Gender.swift */; };
+		6253682D2299FEAA0033B5FE /* Polly+Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6253682C2299FEAA0033B5FE /* Polly+Output.swift */; };
+		6253682F2299FEC70033B5FE /* Polly+Synthesize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6253682E2299FEC70033B5FE /* Polly+Synthesize.swift */; };
+		625368312299FEEB0033B5FE /* Polly+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625368302299FEEB0033B5FE /* Polly+Task.swift */; };
+		62536834229A01C80033B5FE /* DateFormatter+iso8601Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62536833229A01C80033B5FE /* DateFormatter+iso8601Formatter.swift */; };
+		62536836229A058D0033B5FE /* Roborock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62536835229A058D0033B5FE /* Roborock.swift */; };
+		62536838229A06040033B5FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62536837229A06040033B5FE /* Environment.swift */; };
+		6253683E229A06640033B5FE /* KeyRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6253683D229A06640033B5FE /* KeyRepresentable.swift */; };
+		62536841229A069C0033B5FE /* BundleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62536840229A069C0033B5FE /* BundleProperty.swift */; };
+		62536843229A06D20033B5FE /* KeyStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62536842229A06D20033B5FE /* KeyStorable.swift */; };
 		62E2452D2280FDDC001BD7F7 /* Polly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2452C2280FDDC001BD7F7 /* Polly.swift */; };
 		DCB7D2F32198F756CDED1F0B /* Pods_Maxim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBE8C37E31D5E428EC8AA9B /* Pods_Maxim.framework */; };
 /* End PBXBuildFile section */
@@ -29,7 +41,19 @@
 		621598802280F2210027AAC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		621598822280F2210027AAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		621598832280F2210027AAC6 /* Maxim.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Maxim.entitlements; sourceTree = "<group>"; };
-		625368212299F8260033B5FE /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		625368212299F8260033B5FE /* FileManager+Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Directory.swift"; sourceTree = "<group>"; };
+		625368262299FE730033B5FE /* Polly+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polly+Language.swift"; sourceTree = "<group>"; };
+		625368282299FE8A0033B5FE /* Polly+Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polly+Voice.swift"; sourceTree = "<group>"; };
+		6253682A2299FE970033B5FE /* Polly+Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polly+Gender.swift"; sourceTree = "<group>"; };
+		6253682C2299FEAA0033B5FE /* Polly+Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polly+Output.swift"; sourceTree = "<group>"; };
+		6253682E2299FEC70033B5FE /* Polly+Synthesize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polly+Synthesize.swift"; sourceTree = "<group>"; };
+		625368302299FEEB0033B5FE /* Polly+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polly+Task.swift"; sourceTree = "<group>"; };
+		62536833229A01C80033B5FE /* DateFormatter+iso8601Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+iso8601Formatter.swift"; sourceTree = "<group>"; };
+		62536835229A058D0033B5FE /* Roborock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roborock.swift; sourceTree = "<group>"; };
+		62536837229A06040033B5FE /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		6253683D229A06640033B5FE /* KeyRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRepresentable.swift; sourceTree = "<group>"; };
+		62536840229A069C0033B5FE /* BundleProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProperty.swift; sourceTree = "<group>"; };
+		62536842229A06D20033B5FE /* KeyStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStorable.swift; sourceTree = "<group>"; };
 		62E2452C2280FDDC001BD7F7 /* Polly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,17 +90,61 @@
 		621598782280F2200027AAC6 /* Maxim */ = {
 			isa = PBXGroup;
 			children = (
+				6253683F229A06950033B5FE /* Persistence */,
+				62536839229A06120033B5FE /* Protocols */,
+				625368322299FFDE0033B5FE /* Extensions */,
+				625368252299FE530033B5FE /* Polly */,
 				621598792280F2200027AAC6 /* AppDelegate.swift */,
 				6215987B2280F2200027AAC6 /* ViewController.swift */,
 				6215987D2280F2210027AAC6 /* Assets.xcassets */,
 				6215987F2280F2210027AAC6 /* Main.storyboard */,
 				621598822280F2210027AAC6 /* Info.plist */,
 				621598832280F2210027AAC6 /* Maxim.entitlements */,
-				62E2452C2280FDDC001BD7F7 /* Polly.swift */,
 				62051F0022974DDF00356F10 /* Adapter.swift */,
-				625368212299F8260033B5FE /* FileManager.swift */,
+				62536835229A058D0033B5FE /* Roborock.swift */,
+				62536837229A06040033B5FE /* Environment.swift */,
 			);
 			path = Maxim;
+			sourceTree = "<group>";
+		};
+		625368252299FE530033B5FE /* Polly */ = {
+			isa = PBXGroup;
+			children = (
+				62E2452C2280FDDC001BD7F7 /* Polly.swift */,
+				625368262299FE730033B5FE /* Polly+Language.swift */,
+				625368282299FE8A0033B5FE /* Polly+Voice.swift */,
+				6253682A2299FE970033B5FE /* Polly+Gender.swift */,
+				6253682C2299FEAA0033B5FE /* Polly+Output.swift */,
+				6253682E2299FEC70033B5FE /* Polly+Synthesize.swift */,
+				625368302299FEEB0033B5FE /* Polly+Task.swift */,
+			);
+			path = Polly;
+			sourceTree = "<group>";
+		};
+		625368322299FFDE0033B5FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				625368212299F8260033B5FE /* FileManager+Directory.swift */,
+				62536833229A01C80033B5FE /* DateFormatter+iso8601Formatter.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		62536839229A06120033B5FE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6253683D229A06640033B5FE /* KeyRepresentable.swift */,
+				62536842229A06D20033B5FE /* KeyStorable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6253683F229A06950033B5FE /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				62536840229A069C0033B5FE /* BundleProperty.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		B27E7728B253259839C81DC8 /* Pods */ = {
@@ -217,11 +285,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				625368222299F8260033B5FE /* FileManager.swift in Sources */,
+				625368222299F8260033B5FE /* FileManager+Directory.swift in Sources */,
+				6253683E229A06640033B5FE /* KeyRepresentable.swift in Sources */,
 				62051F0122974DDF00356F10 /* Adapter.swift in Sources */,
+				62536834229A01C80033B5FE /* DateFormatter+iso8601Formatter.swift in Sources */,
+				62536838229A06040033B5FE /* Environment.swift in Sources */,
+				62536836229A058D0033B5FE /* Roborock.swift in Sources */,
+				625368292299FE8A0033B5FE /* Polly+Voice.swift in Sources */,
 				62E2452D2280FDDC001BD7F7 /* Polly.swift in Sources */,
+				62536843229A06D20033B5FE /* KeyStorable.swift in Sources */,
+				6253682D2299FEAA0033B5FE /* Polly+Output.swift in Sources */,
+				6253682B2299FE970033B5FE /* Polly+Gender.swift in Sources */,
+				6253682F2299FEC70033B5FE /* Polly+Synthesize.swift in Sources */,
+				625368272299FE730033B5FE /* Polly+Language.swift in Sources */,
 				6215987C2280F2200027AAC6 /* ViewController.swift in Sources */,
 				6215987A2280F2200027AAC6 /* AppDelegate.swift in Sources */,
+				62536841229A069C0033B5FE /* BundleProperty.swift in Sources */,
+				625368312299FEEB0033B5FE /* Polly+Task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
