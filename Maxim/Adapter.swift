@@ -10,6 +10,56 @@ import Foundation
 import CryptoSwift
 import Alamofire
 
+private enum Canonical {
+    
+    struct Request {
+        
+        enum Error: LocalizedError {
+            case unwrapping
+            case encoding
+        }
+        
+        let HTTPRequestMethod: String
+        let CanonicalURI: String
+        let CanonicalQueryString: String
+        let CanonicalHeaders: String
+        let SignedHeaders: String
+        let RequestPayload: String
+        
+        let hash: String
+        
+        init(request: URLRequest) throws {
+            guard let method = request.httpMethod else { throw Error.unwrapping }
+            HTTPRequestMethod = method
+            guard let url = request.url else { throw Error.unwrapping }
+            CanonicalURI = url.path
+            CanonicalQueryString = url.query ?? ""
+            guard let headers = request.allHTTPHeaderFields else { throw Error.unwrapping }
+            SignedHeaders = headers.map{ $0.key.lowercased() }.sorted().joined(separator: ";")
+            CanonicalHeaders = headers.map({ $0.key.lowercased() + ":" + $0.value }).sorted().joined(separator: "\n")
+            guard let rawBody = request.httpBody else { throw Error.unwrapping }
+            guard let httpBody = String(data: rawBody, encoding: .utf8) else { throw Error.encoding }
+            RequestPayload = httpBody.sha256()
+            hash = [
+                HTTPRequestMethod, CanonicalURI, CanonicalQueryString,
+                CanonicalHeaders, "", SignedHeaders, RequestPayload
+                ].joined(separator: "\n").sha256()
+        }
+        
+    }
+    
+}
+
+private struct Credential {
+    
+    
+    
+}
+
+private struct StringToSign {
+    
+}
+
 class Signer: RequestAdapter {
     
     private let AWSAccessKeyId: String = Environment.value(forKey: .awsAccessKeyId)
@@ -20,36 +70,25 @@ class Signer: RequestAdapter {
     private var iso8601Formatter = ISO8601Formatter()
     
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
-        var signedRequest = urlRequest
+        
+        var request = urlRequest
         let date = Date()
         
         guard
-            let bodyData = signedRequest.httpBody,
-            let body = String(data: bodyData, encoding: .utf8),
-            let url = signedRequest.url, let host = url.host
+            let url = request.url,
+            let host = url.host
             else { return urlRequest }
         
-        signedRequest.addValue(host, forHTTPHeaderField: "Host")
-        signedRequest.addValue(iso8601Formatter.string(from: date, style: .full), forHTTPHeaderField: "X-Amz-Date")
+        request.addValue(host, forHTTPHeaderField: "Host")
+        request.addValue(iso8601Formatter.string(from: date, style: .full), forHTTPHeaderField: "X-Amz-Date")
         
-        guard
-            let headers = signedRequest.allHTTPHeaderFields,
-            let httpMethod = signedRequest.httpMethod
-            else { return urlRequest }
+        guard let headers = request.allHTTPHeaderFields else { return urlRequest }
         
         let signedHeaders = headers.map{ $0.key.lowercased() }.sorted().joined(separator: ";")
         
-        let canonicalHeaders = headers.map({ $0.key.lowercased() + ":" + $0.value }).sorted().joined(separator: "\n")
+        let canonicalRequest = try! Canonical.Request(request: request)
         
-        let canonicalRequestHash = [
-            httpMethod,
-            url.path,
-            url.query ?? "",
-            canonicalHeaders,
-            "",
-            signedHeaders,
-            body.sha256()
-            ].joined(separator: "\n").sha256()
+        let canonicalRequestHash = canonicalRequest.hash
         
         let credential = [iso8601Formatter.string(from: date, style: .short),
                           AWSRegion,
@@ -79,8 +118,8 @@ class Signer: RequestAdapter {
             + signedHeaders
             + ", Signature="
             + signature
-        signedRequest.addValue(authorization, forHTTPHeaderField: "Authorization")
-        return signedRequest
+        request.addValue(authorization, forHTTPHeaderField: "Authorization")
+        return request
     }
     
     private func hmacStringToSign(stringToSign: String, secretSigningKey: String, shortDateString: String) -> String? {

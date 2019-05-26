@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,7 @@
 		6215987A2280F2200027AAC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621598792280F2200027AAC6 /* AppDelegate.swift */; };
 		6215987C2280F2200027AAC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6215987B2280F2200027AAC6 /* ViewController.swift */; };
 		6215987E2280F2210027AAC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6215987D2280F2210027AAC6 /* Assets.xcassets */; };
-		621598812280F2210027AAC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6215987F2280F2210027AAC6 /* Main.storyboard */; };
+		6235A016229AD63F00325FF3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6235A015229AD63F00325FF3 /* .gitignore */; };
 		625368222299F8260033B5FE /* FileManager+Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625368212299F8260033B5FE /* FileManager+Directory.swift */; };
 		625368272299FE730033B5FE /* Polly+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625368262299FE730033B5FE /* Polly+Language.swift */; };
 		625368292299FE8A0033B5FE /* Polly+Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625368282299FE8A0033B5FE /* Polly+Voice.swift */; };
@@ -25,6 +25,22 @@
 		6253683E229A06640033B5FE /* KeyRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6253683D229A06640033B5FE /* KeyRepresentable.swift */; };
 		62536841229A069C0033B5FE /* BundleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62536840229A069C0033B5FE /* BundleProperty.swift */; };
 		62536843229A06D20033B5FE /* KeyStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62536842229A06D20033B5FE /* KeyStorable.swift */; };
+		62536845229AA9600033B5FE /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62536844229AA9600033B5FE /* Window.swift */; };
+		6253684B229ACF390033B5FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6253684A229ACF390033B5FE /* Main.storyboard */; };
+		62536859229AD03E0033B5FE /* SFPro-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6253684E229AD03E0033B5FE /* SFPro-Display-Heavy.otf */; };
+		6253685A229AD03E0033B5FE /* SFPro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6253684F229AD03E0033B5FE /* SFPro-Text-Regular.otf */; };
+		6253685B229AD03E0033B5FE /* SFPro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 62536850229AD03E0033B5FE /* SFPro-Display-Semibold.otf */; };
+		6253685C229AD03E0033B5FE /* Caveat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62536851229AD03E0033B5FE /* Caveat-Bold.ttf */; };
+		6253685D229AD03E0033B5FE /* SFPro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 62536852229AD03E0033B5FE /* SFPro-Text-Medium.otf */; };
+		6253685E229AD03E0033B5FE /* Caveat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62536853229AD03E0033B5FE /* Caveat-Regular.ttf */; };
+		6253685F229AD03E0033B5FE /* SFPro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 62536854229AD03E0033B5FE /* SFPro-Display-Medium.otf */; };
+		62536860229AD03E0033B5FE /* SFPro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 62536855229AD03E0033B5FE /* SFPro-Text-Bold.otf */; };
+		62536861229AD03E0033B5FE /* SFPro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 62536856229AD03E0033B5FE /* SFPro-Text-Semibold.otf */; };
+		62536862229AD03E0033B5FE /* SFPro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 62536857229AD03E0033B5FE /* SFPro-Display-Bold.otf */; };
+		62536863229AD03E0033B5FE /* SFPro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 62536858229AD03E0033B5FE /* SFPro-Display-Regular.otf */; };
+		62536868229AD2730033B5FE /* .swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 62536866229AD2730033B5FE /* .swiftgen.yml */; };
+		62536869229AD2730033B5FE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 62536867229AD2730033B5FE /* .swiftlint.yml */; };
+		6253686B229AD2A80033B5FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6253686A229AD2A80033B5FE /* Localizable.strings */; };
 		62E2452D2280FDDC001BD7F7 /* Polly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2452C2280FDDC001BD7F7 /* Polly.swift */; };
 		DCB7D2F32198F756CDED1F0B /* Pods_Maxim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBE8C37E31D5E428EC8AA9B /* Pods_Maxim.framework */; };
 /* End PBXBuildFile section */
@@ -38,9 +54,9 @@
 		621598792280F2200027AAC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6215987B2280F2200027AAC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6215987D2280F2210027AAC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		621598802280F2210027AAC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		621598822280F2210027AAC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		621598832280F2210027AAC6 /* Maxim.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Maxim.entitlements; sourceTree = "<group>"; };
+		6235A015229AD63F00325FF3 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		625368212299F8260033B5FE /* FileManager+Directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Directory.swift"; sourceTree = "<group>"; };
 		625368262299FE730033B5FE /* Polly+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polly+Language.swift"; sourceTree = "<group>"; };
 		625368282299FE8A0033B5FE /* Polly+Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polly+Voice.swift"; sourceTree = "<group>"; };
@@ -54,6 +70,22 @@
 		6253683D229A06640033B5FE /* KeyRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRepresentable.swift; sourceTree = "<group>"; };
 		62536840229A069C0033B5FE /* BundleProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleProperty.swift; sourceTree = "<group>"; };
 		62536842229A06D20033B5FE /* KeyStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStorable.swift; sourceTree = "<group>"; };
+		62536844229AA9600033B5FE /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		6253684A229ACF390033B5FE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6253684E229AD03E0033B5FE /* SFPro-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Display-Heavy.otf"; sourceTree = "<group>"; };
+		6253684F229AD03E0033B5FE /* SFPro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Text-Regular.otf"; sourceTree = "<group>"; };
+		62536850229AD03E0033B5FE /* SFPro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		62536851229AD03E0033B5FE /* Caveat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-Bold.ttf"; sourceTree = "<group>"; };
+		62536852229AD03E0033B5FE /* SFPro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Text-Medium.otf"; sourceTree = "<group>"; };
+		62536853229AD03E0033B5FE /* Caveat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-Regular.ttf"; sourceTree = "<group>"; };
+		62536854229AD03E0033B5FE /* SFPro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Display-Medium.otf"; sourceTree = "<group>"; };
+		62536855229AD03E0033B5FE /* SFPro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Text-Bold.otf"; sourceTree = "<group>"; };
+		62536856229AD03E0033B5FE /* SFPro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		62536857229AD03E0033B5FE /* SFPro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Display-Bold.otf"; sourceTree = "<group>"; };
+		62536858229AD03E0033B5FE /* SFPro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFPro-Display-Regular.otf"; sourceTree = "<group>"; };
+		62536866229AD2730033B5FE /* .swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftgen.yml; sourceTree = "<group>"; };
+		62536867229AD2730033B5FE /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		6253686A229AD2A80033B5FE /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		62E2452C2280FDDC001BD7F7 /* Polly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,19 +122,18 @@
 		621598782280F2200027AAC6 /* Maxim */ = {
 			isa = PBXGroup;
 			children = (
+				6253684C229ACFAD0033B5FE /* Resources */,
+				62536846229ACEE40033B5FE /* Storyboards */,
 				6253683F229A06950033B5FE /* Persistence */,
 				62536839229A06120033B5FE /* Protocols */,
-				625368322299FFDE0033B5FE /* Extensions */,
 				625368252299FE530033B5FE /* Polly */,
+				625368322299FFDE0033B5FE /* Extensions */,
 				621598792280F2200027AAC6 /* AppDelegate.swift */,
 				6215987B2280F2200027AAC6 /* ViewController.swift */,
-				6215987D2280F2210027AAC6 /* Assets.xcassets */,
-				6215987F2280F2210027AAC6 /* Main.storyboard */,
-				621598822280F2210027AAC6 /* Info.plist */,
-				621598832280F2210027AAC6 /* Maxim.entitlements */,
 				62051F0022974DDF00356F10 /* Adapter.swift */,
 				62536835229A058D0033B5FE /* Roborock.swift */,
 				62536837229A06040033B5FE /* Environment.swift */,
+				62536844229AA9600033B5FE /* Window.swift */,
 			);
 			path = Maxim;
 			sourceTree = "<group>";
@@ -147,6 +178,55 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		62536846229ACEE40033B5FE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6253684A229ACF390033B5FE /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6253684C229ACFAD0033B5FE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62536864229AD0600033B5FE /* Configurations */,
+				6253684D229AD03E0033B5FE /* Fonts */,
+				6215987D2280F2210027AAC6 /* Assets.xcassets */,
+				621598822280F2210027AAC6 /* Info.plist */,
+				621598832280F2210027AAC6 /* Maxim.entitlements */,
+				6253686A229AD2A80033B5FE /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6253684D229AD03E0033B5FE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6253684E229AD03E0033B5FE /* SFPro-Display-Heavy.otf */,
+				6253684F229AD03E0033B5FE /* SFPro-Text-Regular.otf */,
+				62536850229AD03E0033B5FE /* SFPro-Display-Semibold.otf */,
+				62536851229AD03E0033B5FE /* Caveat-Bold.ttf */,
+				62536852229AD03E0033B5FE /* SFPro-Text-Medium.otf */,
+				62536853229AD03E0033B5FE /* Caveat-Regular.ttf */,
+				62536854229AD03E0033B5FE /* SFPro-Display-Medium.otf */,
+				62536855229AD03E0033B5FE /* SFPro-Text-Bold.otf */,
+				62536856229AD03E0033B5FE /* SFPro-Text-Semibold.otf */,
+				62536857229AD03E0033B5FE /* SFPro-Display-Bold.otf */,
+				62536858229AD03E0033B5FE /* SFPro-Display-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		62536864229AD0600033B5FE /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				6235A015229AD63F00325FF3 /* .gitignore */,
+				62536866229AD2730033B5FE /* .swiftgen.yml */,
+				62536867229AD2730033B5FE /* .swiftlint.yml */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		B27E7728B253259839C81DC8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +252,7 @@
 			buildConfigurationList = 621598862280F2210027AAC6 /* Build configuration list for PBXNativeTarget "Maxim" */;
 			buildPhases = (
 				C1B90A220FA6AFDBAC365EEE /* [CP] Check Pods Manifest.lock */,
+				62536865229AD2030033B5FE /* Code Generation */,
 				621598722280F2200027AAC6 /* Sources */,
 				621598732280F2200027AAC6 /* Frameworks */,
 				621598742280F2200027AAC6 /* Resources */,
@@ -224,8 +305,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62536869229AD2730033B5FE /* .swiftlint.yml in Resources */,
+				6253685B229AD03E0033B5FE /* SFPro-Display-Semibold.otf in Resources */,
+				6253685E229AD03E0033B5FE /* Caveat-Regular.ttf in Resources */,
+				62536863229AD03E0033B5FE /* SFPro-Display-Regular.otf in Resources */,
+				6235A016229AD63F00325FF3 /* .gitignore in Resources */,
+				6253685A229AD03E0033B5FE /* SFPro-Text-Regular.otf in Resources */,
+				62536859229AD03E0033B5FE /* SFPro-Display-Heavy.otf in Resources */,
+				6253685F229AD03E0033B5FE /* SFPro-Display-Medium.otf in Resources */,
 				6215987E2280F2210027AAC6 /* Assets.xcassets in Resources */,
-				621598812280F2210027AAC6 /* Main.storyboard in Resources */,
+				62536861229AD03E0033B5FE /* SFPro-Text-Semibold.otf in Resources */,
+				62536868229AD2730033B5FE /* .swiftgen.yml in Resources */,
+				62536860229AD03E0033B5FE /* SFPro-Text-Bold.otf in Resources */,
+				62536862229AD03E0033B5FE /* SFPro-Display-Bold.otf in Resources */,
+				6253685D229AD03E0033B5FE /* SFPro-Text-Medium.otf in Resources */,
+				6253686B229AD2A80033B5FE /* Localizable.strings in Resources */,
+				6253684B229ACF390033B5FE /* Main.storyboard in Resources */,
+				6253685C229AD03E0033B5FE /* Caveat-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,23 +334,34 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Maxim/Pods-Maxim-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Maxim/Pods-Maxim-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Maxim/Pods-Maxim-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Maxim/Pods-Maxim-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		62536865229AD2030033B5FE /* Code Generation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Code Generation";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf \"${SRCROOT}/${PROJECT_NAME}/Generated\";\n\nif [ ! -d \"${SRCROOT}/${PROJECT_NAME}/Generated\" ]; then\nmkdir -p \"${SRCROOT}/${PROJECT_NAME}/Generated\";\nfi\n\n\"${PODS_ROOT}/SwiftGen/bin/swiftgen\" config run --config \"${SRCROOT}/${PROJECT_NAME}/Resources/Configurations/.swiftgen.yml\";\n\n#echo \"warning: Storyboard Scenes and Assets generation phase finished!\".\n";
 		};
 		C1B90A220FA6AFDBAC365EEE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -296,6 +403,7 @@
 				62536843229A06D20033B5FE /* KeyStorable.swift in Sources */,
 				6253682D2299FEAA0033B5FE /* Polly+Output.swift in Sources */,
 				6253682B2299FE970033B5FE /* Polly+Gender.swift in Sources */,
+				62536845229AA9600033B5FE /* Window.swift in Sources */,
 				6253682F2299FEC70033B5FE /* Polly+Synthesize.swift in Sources */,
 				625368272299FE730033B5FE /* Polly+Language.swift in Sources */,
 				6215987C2280F2200027AAC6 /* ViewController.swift in Sources */,
@@ -306,17 +414,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		6215987F2280F2210027AAC6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				621598802280F2210027AAC6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		621598842280F2210027AAC6 /* Debug */ = {
@@ -439,17 +536,19 @@
 			baseConfigurationReference = 1B4A34A39F7EDD430F19F6F5 /* Pods-Maxim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Maxim/Maxim.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Maxim/Resources/Maxim.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W6RMDF3HTL;
-				INFOPLIST_FILE = Maxim/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Maxim/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Maxim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -459,17 +558,19 @@
 			baseConfigurationReference = 2B5438D780DEE7EA650EF500 /* Pods-Maxim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Maxim/Maxim.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Maxim/Resources/Maxim.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = W6RMDF3HTL;
-				INFOPLIST_FILE = Maxim/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Maxim/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Maxim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

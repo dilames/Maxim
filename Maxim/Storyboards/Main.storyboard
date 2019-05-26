@@ -684,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA" customClass="Window" customModule="Maxim" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -706,70 +706,13 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Maxim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="201"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="365"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cO-Le-pjh">
-                                <rect key="frame" x="30" y="41" width="420" height="150"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="YJj-ip-FdU">
-                                    <rect key="frame" x="0.0" y="0.0" width="420" height="150"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="5TA-UM-LqR">
-                                            <rect key="frame" x="0.0" y="0.0" width="420" height="150"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="420" height="150"/>
-                                            <size key="maxSize" width="420" height="10000000"/>
-                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                        </textView>
-                                    </subviews>
-                                </clipView>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="TBg-C5-Gxt"/>
-                                </constraints>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="0Q4-Q0-Reu">
-                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="UcK-kH-JKV">
-                                    <rect key="frame" x="404" y="0.0" width="16" height="150"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EMM-Bs-4ac">
-                                <rect key="frame" x="24" y="3" width="432" height="32"/>
-                                <buttonCell key="cell" type="push" title="Spell" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qNf-s9-Idf">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <string key="keyEquivalent" base64-UTF8="YES">
-DQ
-</string>
-                                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="spell:" target="XfG-lQ-9wD" id="sSo-ck-1mE"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="EMM-Bs-4ac" firstAttribute="top" secondItem="5cO-Le-pjh" secondAttribute="bottom" constant="10" id="BfM-nn-w0f"/>
-                            <constraint firstAttribute="bottom" secondItem="EMM-Bs-4ac" secondAttribute="bottom" constant="10" id="IAp-5x-uMk"/>
-                            <constraint firstAttribute="trailing" secondItem="5cO-Le-pjh" secondAttribute="trailing" constant="30" id="NW5-JB-HDR"/>
-                            <constraint firstItem="EMM-Bs-4ac" firstAttribute="centerX" secondItem="5TA-UM-LqR" secondAttribute="centerX" id="Phg-g0-JGd"/>
-                            <constraint firstItem="EMM-Bs-4ac" firstAttribute="width" secondItem="5TA-UM-LqR" secondAttribute="width" id="mDw-84-ayH"/>
-                            <constraint firstItem="5cO-Le-pjh" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="mjc-7B-dvU"/>
-                            <constraint firstItem="5cO-Le-pjh" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="p6G-2k-rv7"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="textView" destination="5TA-UM-LqR" id="fV7-zV-VDG"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="736.5"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Flawless Feedback
+
+  Created by Ahmed Sulaiman on 2/19/19.
+  Copyright © 2019 Ahmed Sulaiman. All rights reserved.
+*/
+
+// Common
+// Copy for common elements across the application
+"common.app.name" = "Maxim";

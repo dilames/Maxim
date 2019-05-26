@@ -1,0 +1,18 @@
+output_dir: ../../Generated
+xcassets:
+   inputs: ../../Resources/Assets.xcassets
+   outputs:
+      templateName: swift4
+      output: Assets.swift
+ib:
+   inputs: ../../Storyboards
+   outputs:
+      - templateName: scenes-swift4
+        output: Storyboard Scenes.swift
+      - templateName: segues-swift4
+        output: Storyboard Segues.swift
+strings:
+    inputs: ../../Resources/Localizable.strings
+    outputs:
+        - templateName: structured-swift4
+          output: Localizable.swift

@@ -1,0 +1,35 @@
+disabled_rules:
+- trailing_whitespace
+
+line_length:
+- 200 # warning
+- 300 # error
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+- Pods
+
+identifier_name:
+  min_length: # only min_length
+     error: 4 # only error
+  excluded: # excluded via string array
+    - id
+    - pop
+    - get
+    - url
+    - key
+    - me
+    - row
+    - x
+    - dx
+    - dy
+    - domain
+    - top
+    - UTC
+    - tcp
+    - dW
+    - dH
+    - up
+    - lhs
+    - rhs
+    - c
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)

@@ -37,9 +37,10 @@ class ViewController: NSViewController {
                     contents: $0.data,
                     attributes: nil
                     ) else { fatalError("Could not create a file") }
-                
-                let roborock = Roborock(user: "root", ip: "192.168.0.114")
-                roborock.play(url: file, volume: 0.02)
+                DispatchQueue.global().async {
+                    let roborock = Roborock(user: "root", ip: "192.168.0.114")
+                    roborock.play(url: file, volume: 2.0)
+                }
         }
     }
     
