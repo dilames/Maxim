@@ -122,20 +122,28 @@
 		621598782280F2200027AAC6 /* Maxim */ = {
 			isa = PBXGroup;
 			children = (
+				6235A017229AD8C100325FF3 /* Network */,
 				6253684C229ACFAD0033B5FE /* Resources */,
 				62536846229ACEE40033B5FE /* Storyboards */,
 				6253683F229A06950033B5FE /* Persistence */,
 				62536839229A06120033B5FE /* Protocols */,
-				625368252299FE530033B5FE /* Polly */,
 				625368322299FFDE0033B5FE /* Extensions */,
 				621598792280F2200027AAC6 /* AppDelegate.swift */,
 				6215987B2280F2200027AAC6 /* ViewController.swift */,
-				62051F0022974DDF00356F10 /* Adapter.swift */,
 				62536835229A058D0033B5FE /* Roborock.swift */,
 				62536837229A06040033B5FE /* Environment.swift */,
 				62536844229AA9600033B5FE /* Window.swift */,
 			);
 			path = Maxim;
+			sourceTree = "<group>";
+		};
+		6235A017229AD8C100325FF3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				625368252299FE530033B5FE /* Polly */,
+				62051F0022974DDF00356F10 /* Adapter.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		625368252299FE530033B5FE /* Polly */ = {
