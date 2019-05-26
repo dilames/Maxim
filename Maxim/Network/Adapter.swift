@@ -10,56 +10,6 @@ import Foundation
 import CryptoSwift
 import Alamofire
 
-private enum Canonical {
-    
-    struct Request {
-        
-        enum Error: LocalizedError {
-            case unwrapping
-            case encoding
-        }
-        
-        let HTTPRequestMethod: String
-        let CanonicalURI: String
-        let CanonicalQueryString: String
-        let CanonicalHeaders: String
-        let SignedHeaders: String
-        let RequestPayload: String
-        
-        let hash: String
-        
-        init(request: URLRequest) throws {
-            guard let method = request.httpMethod else { throw Error.unwrapping }
-            HTTPRequestMethod = method
-            guard let url = request.url else { throw Error.unwrapping }
-            CanonicalURI = url.path
-            CanonicalQueryString = url.query ?? ""
-            guard let headers = request.allHTTPHeaderFields else { throw Error.unwrapping }
-            SignedHeaders = headers.map{ $0.key.lowercased() }.sorted().joined(separator: ";")
-            CanonicalHeaders = headers.map({ $0.key.lowercased() + ":" + $0.value }).sorted().joined(separator: "\n")
-            guard let rawBody = request.httpBody else { throw Error.unwrapping }
-            guard let httpBody = String(data: rawBody, encoding: .utf8) else { throw Error.encoding }
-            RequestPayload = httpBody.sha256()
-            hash = [
-                HTTPRequestMethod, CanonicalURI, CanonicalQueryString,
-                CanonicalHeaders, "", SignedHeaders, RequestPayload
-                ].joined(separator: "\n").sha256()
-        }
-        
-    }
-    
-}
-
-private struct Credential {
-    
-    
-    
-}
-
-private struct StringToSign {
-    
-}
-
 class Signer: RequestAdapter {
     
     private let AWSAccessKeyId: String = Environment.value(forKey: .awsAccessKeyId)
@@ -82,31 +32,28 @@ class Signer: RequestAdapter {
         request.addValue(host, forHTTPHeaderField: "Host")
         request.addValue(iso8601Formatter.string(from: date, style: .full), forHTTPHeaderField: "X-Amz-Date")
         
-        guard let headers = request.allHTTPHeaderFields else { return urlRequest }
-        
-        let signedHeaders = headers.map{ $0.key.lowercased() }.sorted().joined(separator: ";")
-        
         let canonicalRequest = try! Canonical.Request(request: request)
         
-        let canonicalRequestHash = canonicalRequest.hash
+        let signedHeaders = canonicalRequest.SignedHeaders
         
-        let credential = [iso8601Formatter.string(from: date, style: .short),
-                          AWSRegion,
-                          AWSService,
-                          "aws4_request"]
-            .joined(separator: "/")
+        let credentials = Credential(date: date,
+                                     iso8601Formatter: iso8601Formatter,
+                                     awsRegion: AWSRegion,
+                                     awsService: AWSService)
         
-        let stringToSign = [
-            "AWS4-HMAC-SHA256",
-            iso8601Formatter.string(from: date, style: .full),
-            credential,
-            canonicalRequestHash
-            ].joined(separator: "\n")
+        let credential = credentials.constructed
+        
+        let stringToSigns = StringToSign(date: date,
+                     iso8601Formatter: iso8601Formatter,
+                     credential: credentials,
+                     canonicalRequest: canonicalRequest)
+        
+        let stringToSign = stringToSigns.constructed
         
         guard
-            let signature = hmacStringToSign(stringToSign: stringToSign,
-                                             secretSigningKey: AWSSecretKey,
-                                             shortDateString: iso8601Formatter.string(from: date, style: .short))
+            let signature: String = hmacStringToSign(stringToSign: stringToSign,
+                                                     secretSigningKey: AWSSecretKey,
+                                                     shortDateString: iso8601Formatter.string(from: date, style: .short))
             else { return urlRequest }
         
         let authorization = "AWS4-HMAC-SHA256"

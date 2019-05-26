@@ -13,9 +13,10 @@ class ViewController: NSViewController {
     
     @IBOutlet private var textView: NSTextView!
     
-    @IBAction func spell(_ sender: Any) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        let task = Polly.Synthesize.spell(text: textView.string, voice: .Maxim, format: .mp3)
+        let task = Polly.Synthesize.spell(text: "Тесты криптографии и синтезации речи завершены!", voice: .Maxim, format: .mp3)
         
         guard let url = URL(string: "\(Polly.base)\(task.path)") else { return }
         
@@ -39,9 +40,14 @@ class ViewController: NSViewController {
                     ) else { fatalError("Could not create a file") }
                 DispatchQueue.global().async {
                     let roborock = Roborock(user: "root", ip: "192.168.0.114")
-                    roborock.play(url: file, volume: 2.0)
+                    roborock.play(url: file, volume: 0.1)
                 }
         }
+    }
+    
+    @IBAction func spell(_ sender: Any) {
+        
+        
     }
     
 }

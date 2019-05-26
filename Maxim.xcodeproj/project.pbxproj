@@ -41,6 +41,10 @@
 		62536868229AD2730033B5FE /* .swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 62536866229AD2730033B5FE /* .swiftgen.yml */; };
 		62536869229AD2730033B5FE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 62536867229AD2730033B5FE /* .swiftlint.yml */; };
 		6253686B229AD2A80033B5FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6253686A229AD2A80033B5FE /* Localizable.strings */; };
+		62C29C19229ADD1000D85D25 /* Canonical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C29C18229ADD1000D85D25 /* Canonical.swift */; };
+		62C29C1B229ADD2A00D85D25 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C29C1A229ADD2A00D85D25 /* Credential.swift */; };
+		62C29C1D229ADE5600D85D25 /* StringToSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C29C1C229ADE5600D85D25 /* StringToSign.swift */; };
+		62C29C1F229ADF4A00D85D25 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C29C1E229ADF4A00D85D25 /* Authorization.swift */; };
 		62E2452D2280FDDC001BD7F7 /* Polly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2452C2280FDDC001BD7F7 /* Polly.swift */; };
 		DCB7D2F32198F756CDED1F0B /* Pods_Maxim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBE8C37E31D5E428EC8AA9B /* Pods_Maxim.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +90,10 @@
 		62536866229AD2730033B5FE /* .swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftgen.yml; sourceTree = "<group>"; };
 		62536867229AD2730033B5FE /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6253686A229AD2A80033B5FE /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		62C29C18229ADD1000D85D25 /* Canonical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canonical.swift; sourceTree = "<group>"; };
+		62C29C1A229ADD2A00D85D25 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		62C29C1C229ADE5600D85D25 /* StringToSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToSign.swift; sourceTree = "<group>"; };
+		62C29C1E229ADF4A00D85D25 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		62E2452C2280FDDC001BD7F7 /* Polly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +150,10 @@
 			children = (
 				625368252299FE530033B5FE /* Polly */,
 				62051F0022974DDF00356F10 /* Adapter.swift */,
+				62C29C18229ADD1000D85D25 /* Canonical.swift */,
+				62C29C1A229ADD2A00D85D25 /* Credential.swift */,
+				62C29C1C229ADE5600D85D25 /* StringToSign.swift */,
+				62C29C1E229ADF4A00D85D25 /* Authorization.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -287,6 +299,11 @@
 				TargetAttributes = {
 					621598752280F2200027AAC6 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -402,8 +419,10 @@
 			files = (
 				625368222299F8260033B5FE /* FileManager+Directory.swift in Sources */,
 				6253683E229A06640033B5FE /* KeyRepresentable.swift in Sources */,
+				62C29C1B229ADD2A00D85D25 /* Credential.swift in Sources */,
 				62051F0122974DDF00356F10 /* Adapter.swift in Sources */,
 				62536834229A01C80033B5FE /* DateFormatter+iso8601Formatter.swift in Sources */,
+				62C29C19229ADD1000D85D25 /* Canonical.swift in Sources */,
 				62536838229A06040033B5FE /* Environment.swift in Sources */,
 				62536836229A058D0033B5FE /* Roborock.swift in Sources */,
 				625368292299FE8A0033B5FE /* Polly+Voice.swift in Sources */,
@@ -413,7 +432,9 @@
 				6253682B2299FE970033B5FE /* Polly+Gender.swift in Sources */,
 				62536845229AA9600033B5FE /* Window.swift in Sources */,
 				6253682F2299FEC70033B5FE /* Polly+Synthesize.swift in Sources */,
+				62C29C1F229ADF4A00D85D25 /* Authorization.swift in Sources */,
 				625368272299FE730033B5FE /* Polly+Language.swift in Sources */,
+				62C29C1D229ADE5600D85D25 /* StringToSign.swift in Sources */,
 				6215987C2280F2200027AAC6 /* ViewController.swift in Sources */,
 				6215987A2280F2200027AAC6 /* AppDelegate.swift in Sources */,
 				62536841229A069C0033B5FE /* BundleProperty.swift in Sources */,
@@ -544,7 +565,6 @@
 			baseConfigurationReference = 1B4A34A39F7EDD430F19F6F5 /* Pods-Maxim.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Maxim/Resources/Maxim.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -566,7 +586,6 @@
 			baseConfigurationReference = 2B5438D780DEE7EA650EF500 /* Pods-Maxim.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Maxim/Resources/Maxim.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
