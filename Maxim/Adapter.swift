@@ -122,6 +122,12 @@ class Signer: RequestAdapter {
         return request
     }
     
+    // kSecret = your secret access key
+    // kDate = HMAC("AWS4" + kSecret, Date)
+    // kRegion = HMAC(kDate, Region)
+    // kService = HMAC(kRegion, Service)
+    // kSigning = HMAC(kService, "aws4_request")
+    
     private func hmacStringToSign(stringToSign: String, secretSigningKey: String, shortDateString: String) -> String? {
         let k1 = "AWS4" + secretSigningKey
         guard
